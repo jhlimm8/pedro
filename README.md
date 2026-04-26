@@ -1,2 +1,3 @@
 # pedro
-Plan Enhanced Deep Research Agent
+
+Plan Enhanced Deep Research Operator
