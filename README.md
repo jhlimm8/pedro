@@ -1,8 +1,7 @@
 # PEDRO — Plan-Extended Deep Research Operator
 
-> A multi-agent deep research system whose differentiator is **alignment-first
-> planning**: it scouts the field *with* you and gets your sign-off on a
-> structured plan *before* it spends tokens on deep research.
+> A multi-agent deep research system whose differentiator is **alignment-first**  
+> **planning**: it opts to spend more tokens on building the plan, *before* it spends tokens on deep research.
 
 ## TL;DR
 
@@ -23,10 +22,9 @@ Can ask clarifying questions mid-loop.
 - **Research** — execution. Greyed out until a plan is approved; then
 auto-engaged with Plan / Plan+ locked.
 
-Comparing Plan vs Plan+ on the same query is the demo: see how much further
-the Plan+ plan reads, and how much better-aligned the eventual report is.
+The hypothesis is that Plan+ will result in more aligned plans than Plan, which will in turn result in more aligned research.
 
-## Demo
+## Video Demo
 
 [https://github.com/user-attachments/assets/REPLACE-ME-WITH-YOUR-VIDEO-URL](https://github.com/user-attachments/assets/REPLACE-ME-WITH-YOUR-VIDEO-URL)
 
@@ -127,7 +125,7 @@ A session has a single bit, `locked`:
 
 - `**locked=False`** (no plan approved): user can switch between Plan and
 Plan+ tabs; Research is selectable but the composer is disabled.
-- `**locked=True**` (plan approved): Plan / Plan+ tabs are visually locked;
+- `**locked=True`** (plan approved): Plan / Plan+ tabs are visually locked;
 research has auto-engaged and is running. The UI gets a `mode_locked`
 SSE event and switches to the Research tab.
 
