@@ -1,8 +1,7 @@
 # PEDRO — Plan-Extended Deep Research Operator
 
-> A multi-agent deep research system whose differentiator is **alignment-first
-> planning**: it scouts the field *with* you and gets your sign-off on a
-> structured plan *before* it spends tokens on deep research.
+> A multi-agent deep research system whose differentiator is **alignment-first**  
+> **planning**: it opts to spend more tokens on building the plan, *before* it spends tokens on deep research.
 
 ## TL;DR
 
@@ -23,12 +22,11 @@ Can ask clarifying questions mid-loop.
 - **Research** — execution. Greyed out until a plan is approved; then
 auto-engaged with Plan / Plan+ locked.
 
-Comparing Plan vs Plan+ on the same query is the demo: see how much further
-the Plan+ plan reads, and how much better-aligned the eventual report is.
+The hypothesis is that Plan+ will result in more aligned plans than Plan, which will in turn result in more aligned research.
 
-## Demo
+## Video Demo
 
-[https://github.com/user-attachments/assets/REPLACE-ME-WITH-YOUR-VIDEO-URL](https://github.com/user-attachments/assets/REPLACE-ME-WITH-YOUR-VIDEO-URL)
+[https://github.com/user-attachments/assets/da47d625-dbcd-4178-adfe-14bf8c705eab](https://github.com/user-attachments/assets/da47d625-dbcd-4178-adfe-14bf8c705eab)
 
 ## Run it
 
@@ -127,13 +125,13 @@ A session has a single bit, `locked`:
 
 - `**locked=False`** (no plan approved): user can switch between Plan and
 Plan+ tabs; Research is selectable but the composer is disabled.
-- `**locked=True**` (plan approved): Plan / Plan+ tabs are visually locked;
+- `**locked=True`** (plan approved): Plan / Plan+ tabs are visually locked;
 research has auto-engaged and is running. The UI gets a `mode_locked`
 SSE event and switches to the Research tab.
 
 The rule is enforced in three places (defense in depth):
 
-1. `**Session.start()**` — refuses to start a planning mode if `locked`,
+1. `**Session.start()`** — refuses to start a planning mode if `locked`,
   refuses to start `research` mode if not `locked`.
 2. `**refreshModeTabs()` in the UI** — visually locks tabs and disables
   the composer.
