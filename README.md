@@ -26,7 +26,7 @@ The hypothesis is that Plan+ will result in more aligned plans than Plan, which 
 
 ## Video Demo
 
-[https://github.com/user-attachments/assets/REPLACE-ME-WITH-YOUR-VIDEO-URL](https://github.com/user-attachments/assets/REPLACE-ME-WITH-YOUR-VIDEO-URL)
+[https://github.com/user-attachments/assets/da47d625-dbcd-4178-adfe-14bf8c705eab](https://github.com/user-attachments/assets/da47d625-dbcd-4178-adfe-14bf8c705eab)
 
 ## Run it
 
@@ -131,7 +131,7 @@ SSE event and switches to the Research tab.
 
 The rule is enforced in three places (defense in depth):
 
-1. `**Session.start()**` — refuses to start a planning mode if `locked`,
+1. `**Session.start()`** — refuses to start a planning mode if `locked`,
   refuses to start `research` mode if not `locked`.
 2. `**refreshModeTabs()` in the UI** — visually locks tabs and disables
   the composer.
