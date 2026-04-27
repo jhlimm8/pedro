@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEDRO — Plan-Extended Deep Research Operator</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f4ecd9'/%3E%3Ctext x='50' y='62' font-family='serif' font-size='52' font-weight='600' text-anchor='middle' fill='%23a23227'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,200..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+  <meta name="color-scheme" content="light only" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="/static/style.css?v=2" />
+</head>
+<body>
+  <div class="vault">
+
+    <header class="masthead">
+      <div class="brand">
+        <h1 class="brand-name"><span class="brand-initial">P</span><span class="brand-rest">EDRO</span></h1>
+        <span class="brand-tagline"><i>plan-extended deep research operator</i></span>
+      </div>
+      <div class="masthead-meta">
+        <span class="meta-line">
+          <span class="meta-label">session</span>
+          <span id="session-id" class="mono">—</span>
+        </span>
+        <button id="new-session" class="ghost-btn" title="Start a new session">new&nbsp;dispatch</button>
+      </div>
+    </header>
+
+    <div class="rule rule-dotted"></div>
+
+    <main id="chat" class="ledger" aria-live="polite">
+      <article class="ledger-entry intro">
+        <div class="gutter">
+          <span class="time">∾</span>
+          <span class="role">prologue</span>
+        </div>
+        <div class="content">
+          <p class="lead">
+            Three modes share this notebook. <b>Plan</b> drafts cold from your query.
+            <b>Plan+</b> sends a scout into the field first, then drafts with what it found.
+            <b>Research</b> executes an approved plan.
+          </p>
+          <p class="lead muted">
+            Toggle modes inline with <kbd>↹</kbd> Tab / <kbd>⇧↹</kbd> Shift-Tab.
+            Approve a plan to lock in and run.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <section id="action-panel" class="action-panel hidden" aria-live="polite"></section>
+
+    <form id="composer" class="composer">
+      <div class="composer-tabs" role="tablist" aria-label="Mode selector">
+        <button type="button" class="mode-tab" data-mode="plan" role="tab" aria-selected="true">
+          <span class="mode-num">i.</span>
+          <span class="mode-name">Plan</span>
+        </button>
+        <button type="button" class="mode-tab" data-mode="plan_plus" role="tab" aria-selected="false">
+          <span class="mode-num">ii.</span>
+          <span class="mode-name">Plan<sup>+</sup></span>
+        </button>
+        <button type="button" class="mode-tab" data-mode="research" role="tab" aria-selected="false">
+          <span class="mode-num">iii.</span>
+          <span class="mode-name">Research</span>
+        </button>
+        <span class="tab-hint mono" aria-hidden="true">↹ cycle</span>
+      </div>
+
+      <div class="composer-body">
+        <textarea id="message" rows="2" placeholder="Pose a question to the operator…" autofocus></textarea>
+        <button id="send" type="submit" class="send-btn" aria-label="Send">
+          <span class="send-label">Send</span>
+          <span class="send-glyph" aria-hidden="true">⌁</span>
+        </button>
+      </div>
+    </form>
+
+    <footer class="status-line">
+      <span id="status-dot" class="dot dot-idle" aria-hidden="true"></span>
+      <span id="status-text" class="status-text">at rest</span>
+      <span class="grow"></span>
+      <span class="status-mode mono"><span class="muted">mode·</span><span id="status-mode">plan</span></span>
+    </footer>
+
+  </div>
+
+  <script src="/static/app.js?v=2"></script>
+</body>
+</html>
